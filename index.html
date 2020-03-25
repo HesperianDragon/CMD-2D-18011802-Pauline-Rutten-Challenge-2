@@ -5,7 +5,7 @@
     <title>Challenge 1 | Responsive Webdesign In Space</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script type="text/javascript" src="javascript/main.js"></script> -->
+    <script type="text/javascript" src="javascript/main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="icon" type="image/png" href="images/logo-x-black.png">
 </head>
@@ -19,54 +19,24 @@
     </header>
     <section>
         <!-- This card shows the current month and day -->
-        <article class="card month">
-            <span id="dayName"></span>
-            <span id="date"></span>
+        <article id=" month" class="month">
+            <p id="dayName"></p>
+            <p id="date"></p>
         </article>
         <!-- This div shows the current time -->
-            <div class="clock">
-                <div class="hour">
-                    <div class="hr" id="hr"></div>
-                </div>
-                <div class="min">
-                    <div class="mn" id="mn"></div>
-                </div>
-                <div class="sec">
-                    <div class="sc" id="sc"></div>
-                </div>
+        <div class="clock">
+            <div class="hour">
+                <div class="hr" id="hr"></div>
             </div>
+            <div class="min">
+                <div class="mn" id="mn"></div>
+            </div>
+            <div class="sec">
+                <div class="sc" id="sc"></div>
+            </div>
+        </div>
         <script type="text/javascript">
-            const deg = 6;
-            const hr = document.querySelector("#hr");
-            const mn = document.querySelector("#mn");
-            const sc = document.querySelector("#sc");
-            setInterval(() => {
-                let day = new Date();
-                let hh = day.getHours() * 30;
-                let mm = day.getMinutes() * deg;
-                let ss = day.getSeconds() * deg;
-                hr.style.transform = `rotateZ(${hh + (mm / 12)}deg)`;
-                mn.style.transform = `rotateZ(${mm}deg)`;
-                sc.style.transform = `rotateZ(${ss}deg)`;
-
-                if (7 <= new Date().getHours() && new Date().getHours() >= 20) {
-                    var bodyColor = document.getElementsByTagName("body")[0];
-                    bodyColor.style.backgroundColor = ' #373B44';
-
-                    var clockColor = document.getElementsByClassName('clock')[0];
-                    clockColor.style.backgroundColor = '#151515';
-                    clockColor.style.border = ' 20px solid white';
-                }
-                else {
-
-                }
-                var monthNames = ["January", "February", "March", "April", "May", "June",
-                    "July", "August", "September", "October", "November", "December"];
-                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                document.getElementById('dayName').innerHTML = dayNames[day.getDay()];
-                document.getElementById('date').innerHTML = monthNames[day.getMonth()] + ' ' + day.getDate() + ' ' + day.getFullYear();
-            })
-
+            
         </script>
     </section>
 </body>
